@@ -5,5 +5,9 @@ import { Component } from "@angular/core";
     templateUrl : './first.component.html'
 })
 export class FirstComponent{
+  titre = "Exemple d'interpolation";
 
+  afficherBonjour() : string {
+    return "Bonjour";
+  }
 }
