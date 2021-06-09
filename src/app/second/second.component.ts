@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./second.component.css']
 })
 export class SecondComponent implements OnInit {
+  pays: string[];
 
-  constructor() { }
+  constructor() {
+    this.pays = [];
+  }
 
   ngOnInit(): void {
+    this.pays = ["France", "Italie", "Espagne", "Allemagne"]
   }
 
 }
