@@ -18,3 +18,8 @@
 <h4>3. Binding d'évènement</h4>
 <p>Associé une action à un évènement détecté au niveau de l'interface graphique</p>
 <button (click)="changerLogoAngular()">Changer logo Angular</button>
+
+<h4>4. Two-way data binding</h4>
+<p>Association entre un binding de propriété et un binding d'évènement, utilisé essentiellement pour les champs de formulaire</p>
+<input type="text" [(ngModel)]="titre"/> <!--Il faut importer le FormsModule pour pouvoir l'activer-->
+{{titre}}
