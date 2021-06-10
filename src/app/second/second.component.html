@@ -31,7 +31,8 @@
     </tr>
   </tbody>
 </table>
-<button class="btn btn-info" (click)="ajouterPays()">Ajouter un pays</button>
+<button class="btn btn-info" (click)="changerAction('add')">Ajouter un pays</button>
+
 <h4>NgIf</h4>
 <p>Permet d'afficher ou de faire disparaitre un élément selon la condition</p>
 <div *ngIf="true">Ce div est visible</div><!--display: block/inline-->
@@ -49,4 +50,4 @@
   <p>Aucun pays n'est sélectionné</p>
 </div>
 
-<app-td-form *ngIf="isFormulaireActif"></app-td-form>
+<app-td-form *ngIf="action == 'add'"></app-td-form>

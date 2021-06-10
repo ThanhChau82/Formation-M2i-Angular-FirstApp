@@ -10,13 +10,13 @@ export class SecondComponent implements OnInit {
   paysTab: string[];
   pays: Pays[];
   paysActif : Pays;
-  isFormulaireActif : boolean;
+  action : string;
 
   constructor() {
     this.paysTab = [];
     this.pays = [];
     this.paysActif = <Pays>{};
-    this.isFormulaireActif = false;
+    this.action = "";
   }
 
   ngOnInit(): void {
@@ -37,8 +37,8 @@ export class SecondComponent implements OnInit {
     this.paysActif = <Pays>{};
   }
 
-  ajouterPays() {
-    this.isFormulaireActif = true;
+  changerAction(action : string) {
+    this.action = action;
   }
 
 }
