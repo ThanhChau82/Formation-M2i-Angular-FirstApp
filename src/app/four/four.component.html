@@ -1,0 +1,9 @@
+<h5>Détails du pays</h5>
+<div class="card" style="width: 18rem;">
+  <img [src] = "paysActif.drapeau" class="card-img-top" alt="Drapeau {{paysActif.nom}}">
+  <div class="card-body">
+    <h5 class="card-title">{{paysActif.nom}}</h5>
+    <p class="card-text">Capitale : {{paysActif.capitale}}</p>
+    <a (click)="ressetPays()" class="btn btn-primary">Retourner</a>
+  </div>
+</div>
