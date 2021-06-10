@@ -54,4 +54,8 @@ export class SecondComponent implements OnInit {
     let indice = this.pays.findIndex(index => index.id == p.id);
     this.pays[indice] = p;
   }
+
+  delete(id : number) {
+    this.pays = this.pays.filter(paysIndex => paysIndex.id != id);
+  }
 }
