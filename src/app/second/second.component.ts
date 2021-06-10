@@ -44,4 +44,9 @@ export class SecondComponent implements OnInit {
   ajouterPays(p : Pays) {
     this.pays.push(p);
   }
+
+  modifierPays(p : Pays) {
+    this.changerAction("modify");
+    this.paysActif = p;
+  }
 }

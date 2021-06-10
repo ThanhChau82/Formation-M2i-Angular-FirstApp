@@ -27,7 +27,10 @@
       <td scope="row">{{p.langue}}</td>
       <td scope="row"><img [src]="p.drapeau" width="50px"/></td>
       <td scope="row">{{p.capitale}}</td>
-      <td scope="row"><button class="btn btn-info" (click)="activerPays(p.id)">Afficher</button></td>
+      <td scope="row">
+        <button class="btn btn-info" (click)="activerPays(p.id)">Consulter</button>
+        <button class="btn btn-info" (click)="modifierPays(p)">Editer</button>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -38,7 +41,7 @@
 <div *ngIf="true">Ce div est visible</div><!--display: block/inline-->
 <div *ngIf="false">Ce div est caché</div> <!--display: none-->
 <h5>Détails du pays</h5>
-<div *ngIf="paysActif.id > 0" class="card" style="width: 18rem;">
+<div *ngIf="paysActif.id > 0 && action != 'modify'" class="card" style="width: 18rem;">
   <img [src] = "paysActif.drapeau" class="card-img-top" alt="Drapeau {{paysActif.nom}}">
   <div class="card-body">
     <h5 class="card-title">{{paysActif.nom}}</h5>
@@ -46,9 +49,10 @@
     <a (click)="ressetPays()" class="btn btn-primary">Retourner</a>
   </div>
 </div>
-<div *ngIf="paysActif.id == null" class="card" style="width: 18rem;">
+<div *ngIf="paysActif.id == null && action != 'modify'" class="card" style="width: 18rem;">
   <p>Aucun pays n'est sélectionné</p>
 </div>
 
 <!--<app-td-form *ngIf="action == 'add'" [pays]="pays"></app-td-form>-->
-<app-td-form *ngIf="action == 'add'" (newPays)="ajouterPays($event)"></app-td-form>
+<!--<app-td-form *ngIf="action == 'add'" (newPays)="ajouterPays($event)"></app-td-form>--> <!--(newPays)="ajouterPays($event)" : binding évènement-->
+<app-third *ngIf="action == 'modify'" [paysActif]="paysActif"></app-third>

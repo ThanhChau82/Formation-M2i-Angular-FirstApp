@@ -1,0 +1,43 @@
+<h1>Démonstration template-driven form</h1>
+<p>Le formulaire est créé dans le template du composant puis Angular génère les objets du formulaire à partir du DOM</p>
+<form (ngSubmit)="modifierPays(f)" #f="ngForm">
+  <div class="mb-3">
+    <label for="id" class="form-label">Id</label>
+    <input type="number" class="form-control" id="id" ngModel name="id" #idP="ngModel" readonly [(ngModel)]="paysActif.id"><!--ngModel demande Angular de créer un FormControl pour ce champ-->
+    <div *ngIf="idP.invalid && idP.touched" class="alert alert-danger" role="alert">
+      Le champ id est obligatoire !
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="nom" ngModel name="nom" #nom="ngModel" required pattern="[a-zA-Z]+" [(ngModel)]="paysActif.nom">
+    <div *ngIf="nom.invalid && nom.touched && nom.errors?.required" class="alert alert-danger" role="alert">
+      Le champ nom est obligatoire !
+    </div>
+    <div *ngIf="nom.invalid && nom.touched && nom.errors?.pattern" class="alert alert-danger" role="alert">
+      La valeur du champ nom doit contenir des lettres uniquement !
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="langue" class="form-label">Langue</label>
+    <input type="text" class="form-control" id="langue" ngModel name="langue" required #langue="ngModel" pattern="[a-z]{2}" [(ngModel)]="paysActif.langue">
+    <div *ngIf="langue.invalid && langue.touched && langue.errors?.required" class="alert alert-danger" role="alert">
+      Le champ langue est obligatoire !
+    </div>
+    <div *ngIf="langue.invalid && langue.touched && langue.errors?.pattern" class="alert alert-danger" role="alert">
+      La valeur du champ langue doit contenir de 2 lettres uniquement !
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="drapeau" class="form-label">Drapeau</label>
+    <input type="text" class="form-control" id="drapeau" ngModel name="drapeau" #drapeau="ngModel" required [(ngModel)]="paysActif.drapeau">
+    <div *ngIf="drapeau.invalid && drapeau.touched && drapeau.errors?.required" class="alert alert-danger" role="alert">
+      Le champ drapeau est obligatoire !
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="capitale" class="form-label">Capitale</label>
+    <input type="text" class="form-control" id="capitale" ngModel name="capitale" [(ngModel)]="paysActif.capitale">
+  </div>
+  <button type="submit"[disabled]="f.invalid" class="btn btn-primary">Modifier</button>
+</form>

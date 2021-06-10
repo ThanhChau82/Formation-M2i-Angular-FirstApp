@@ -8,6 +8,7 @@ import { SecondComponent } from './second/second.component';
 import { TdFormComponent } from './td-form/td-form.component';
 import { ParentComponent } from './parent/parent.component';
 import { FilsComponent } from './fils/fils.component';
+import { ThirdComponent } from './third/third.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilsComponent } from './fils/fils.component';
     SecondComponent,
     TdFormComponent,
     ParentComponent,
-    FilsComponent
+    FilsComponent,
+    ThirdComponent
   ],
   imports: [ // Importer les bibliothèques/modules externes
     BrowserModule,
