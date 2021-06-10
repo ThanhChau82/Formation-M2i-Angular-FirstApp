@@ -1,4 +1,4 @@
-<p>Parent : <br/>
-  <input type="text" [(ngModel)]="message"/>
-</p>
-<app-fils [msg]="message"></app-fils>
+<p>Parent : {{message}}</p>
+<p>Réponse reçu : {{reponse}}</p>
+<input type="text" [(ngModel)]="message"/>
+<app-fils [msg]="message" (eventReponse)="afficherReponse($event)"></app-fils>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-fils',
@@ -7,12 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FilsComponent implements OnInit {
   @Input('msg') message : string | undefined;
+  @Output() eventReponse = new EventEmitter<string>();
+  reponse : string;
 
   constructor() {
-    //this.message = "Hello from fils !"
+    //this.message = "Hello from fils !";
+    this.reponse = "";
   }
 
   ngOnInit(): void {
+  }
+
+  sendResponse() {
+    this.eventReponse.emit(this.reponse);
   }
 
 }
