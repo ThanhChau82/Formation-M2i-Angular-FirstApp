@@ -41,3 +41,7 @@
   </div>
   <button type="submit"[disabled]="f.invalid" class="btn btn-primary">Ajouter un pays</button>
 </form>
+
+<ul>
+  <li *ngFor="let paysIndex of pays">{{paysIndex.nom}}</li>
+</ul>
