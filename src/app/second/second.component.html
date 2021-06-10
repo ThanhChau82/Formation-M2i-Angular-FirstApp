@@ -29,7 +29,8 @@
       <td scope="row">{{p.capitale}}</td>
       <td scope="row">
         <button class="btn btn-info" (click)="activerPays(p.id)">Consulter</button>
-        <button class="btn btn-info" (click)="modifierPays(p)">Editer</button>
+        <button class="btn btn-success" (click)="modifierPays(p)">Editer</button>
+        <button class="btn btn-danger" (click)="delete(p.id)">Supprimer</button>
       </td>
     </tr>
   </tbody>
