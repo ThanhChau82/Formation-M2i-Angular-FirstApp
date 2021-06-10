@@ -37,11 +37,14 @@
 <div *ngIf="true">Ce div est visible</div><!--display: block/inline-->
 <div *ngIf="false">Ce div est caché</div> <!--display: none-->
 <h5>Détails du pays</h5>
-<div *ngIf="paysActif > 0" class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div *ngIf="paysActif.id > 0" class="card" style="width: 18rem;">
+  <img [src] = "paysActif.drapeau" class="card-img-top" alt="Drapeau {{paysActif.nom}}">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{paysActif.nom}}</h5>
+    <p class="card-text">Capitale : {{paysActif.capitale}}</p>
+    <a (click)="ressetPays()" class="btn btn-primary">Retourner</a>
   </div>
+</div>
+<div *ngIf="paysActif.id == null" class="card" style="width: 18rem;">
+  <p>Aucun pays n'est sélectionné</p>
 </div>

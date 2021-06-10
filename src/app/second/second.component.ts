@@ -9,12 +9,12 @@ import { Pays } from '../models/pays';
 export class SecondComponent implements OnInit {
   paysTab: string[];
   pays: Pays[];
-  paysActif : number;
+  paysActif : Pays;
 
   constructor() {
     this.paysTab = [];
     this.pays = [];
-    this.paysActif = 0;
+    this.paysActif = <Pays>{};
   }
 
   ngOnInit(): void {
@@ -25,12 +25,14 @@ export class SecondComponent implements OnInit {
       new Pays(2, "Italie", "italien", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/langfr-225px-Flag_of_Italy.svg.png", "Rome"),
       new Pays(3, "Espage", "espagnol", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Spain_flag_construction_sheet.svg/220px-Spain_flag_construction_sheet.svg.png", "Madrid")
     ]
-
-    this.paysActif = 0;
   }
 
   activerPays(id: number) {
-    this.paysActif = id;
+    this.paysActif = <Pays>this.pays.find(p => p.id == id);
+  }
+
+  ressetPays() {
+    this.paysActif = <Pays>{};
   }
 
 }
