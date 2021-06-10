@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser'; // Translateur (inter
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { TdFormComponent } from './td-form/td-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    TdFormComponent
   ],
   imports: [ // Importer les bibliothèques/modules externes
     BrowserModule,

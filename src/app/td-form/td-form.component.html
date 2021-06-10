@@ -1,0 +1,24 @@
+<h1>Démonstration template-driven form</h1>
+<form (ngSubmit)="validerFormulaire(f)" #f>
+  <div class="mb-3">
+    <label for="id" class="form-label">Id</label>
+    <input type="number" class="form-control" id="id" ngModel name="id"><!--ngModel demande Angular de créer un FormControl pour ce champ-->
+  </div>
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="nom" ngModel name="nom">
+  </div>
+  <div class="mb-3">
+    <label for="langue" class="form-label">Langue</label>
+    <input type="text" class="form-control" id="langue" ngModel name="langue">
+  </div>
+  <div class="mb-3">
+    <label for="drapeau" class="form-label">Drapeau</label>
+    <input type="text" class="form-control" id="drapeau" ngModel name="drapeau">
+  </div>
+  <div class="mb-3">
+    <label for="capitale" class="form-label">Capitale</label>
+    <input type="text" class="form-control" id="capitale" ngModel name="capitale">
+  </div>
+  <button type="submit" class="btn btn-primary">Ajouter un pays</button>
+</form>
