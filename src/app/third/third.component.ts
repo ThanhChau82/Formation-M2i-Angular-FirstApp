@@ -20,6 +20,10 @@ export class ThirdComponent implements OnInit {
   }
 
   modifierPays(f : NgForm) {
+    this.paysActif.nom = f.value.nom;
+    this.paysActif.langue = f.value.langue;
+    this.paysActif.drapeau = f.value.drapeau;
+    this.paysActif.capitale = f.value.capitale;
     this.paysModifie.emit(this.paysActif);
     this.actionModifiee.emit("");
   }
