@@ -39,9 +39,5 @@
     <label for="capitale" class="form-label">Capitale</label>
     <input type="text" class="form-control" id="capitale" ngModel name="capitale">
   </div>
-  <button type="submit"[disabled]="f.invalid" class="btn btn-primary">Ajouter un pays</button>
+  <button type="submit"[disabled]="f.invalid" class="btn btn-primary">Ajouter</button>
 </form>
-
-<ul>
-  <li *ngFor="let paysIndex of pays">{{paysIndex.nom}}</li>
-</ul>

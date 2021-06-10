@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Pays } from '../models/pays';
 
@@ -9,7 +9,7 @@ import { Pays } from '../models/pays';
 })
 export class TdFormComponent implements OnInit {
   p : Pays;
-  pays : Pays[];
+  @Input('pays') pays : Pays[];
 
   constructor() {
     this.p = <Pays>{};
