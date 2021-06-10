@@ -4,5 +4,44 @@
 <h4>NgFor</h4>
 <p>Afficher automatiquement une liste d'éléments dans le template</p>
 <ul>
-  <li *ngFor="let p of pays">{{p}}</li>
+  <li *ngFor="let pTab of paysTab">{{pTab}}</li>
 </ul>
+<br/>
+<table class="table table-striped table-hover">
+  <caption>Liste des pays</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Langue officielle</th>
+      <th scope="col">Drapeau</th>
+      <th scope="col">Capitale</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of pays">
+      <td scope="row">{{p.id}}</td>
+      <td scope="row">{{p.nom}}</td>
+      <td scope="row">{{p.langue}}</td>
+      <td scope="row"><img [src]="p.drapeau" width="50px"/></td>
+      <td scope="row">{{p.capitale}}</td>
+      <td scope="row"><button class="btn btn-info" (click)="activerPays(p.id)">Afficher</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>NgIf</h4>
+<p>Permet d'afficher ou de faire disparaitre un élément selon la condition</p>
+<div *ngIf="true">Ce div est visible</div><!--display: block/inline-->
+<div *ngIf="false">Ce div est caché</div> <!--display: none-->
+<h5>Détails du pays</h5>
+<div *ngIf="paysActif > 0" class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

@@ -18,7 +18,7 @@ export class FirstComponent implements OnInit{
   }
 
   changerLogoAngular() {
-    if (this.url = this.url1) {
+    if (this.url == this.url1) {
       this.url = this.url2;
     } else {
       this.url = this.url1;
