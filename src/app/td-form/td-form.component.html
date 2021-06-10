@@ -1,5 +1,6 @@
 <h1>Démonstration template-driven form</h1>
-<form (ngSubmit)="validerFormulaire(f)" #f>
+<p>Le formulaire est créé dans le template du composant puis Angular génère les objets du formulaire à partir du DOM</p>
+<form (ngSubmit)="validerFormulaire(f)" #f="ngForm">
   <div class="mb-3">
     <label for="id" class="form-label">Id</label>
     <input type="number" class="form-control" id="id" ngModel name="id"><!--ngModel demande Angular de créer un FormControl pour ce champ-->
