@@ -3,23 +3,41 @@
 <form (ngSubmit)="validerFormulaire(f)" #f="ngForm">
   <div class="mb-3">
     <label for="id" class="form-label">Id</label>
-    <input type="number" class="form-control" id="id" ngModel name="id"><!--ngModel demande Angular de créer un FormControl pour ce champ-->
+    <input type="number" class="form-control" id="id" ngModel name="id" #idP="ngModel" required><!--ngModel demande Angular de créer un FormControl pour ce champ-->
+    <div *ngIf="idP.invalid && idP.touched" class="alert alert-danger" role="alert">
+      Le champ id est obligatoire !
+    </div>
   </div>
   <div class="mb-3">
     <label for="nom" class="form-label">Nom</label>
-    <input type="text" class="form-control" id="nom" ngModel name="nom">
+    <input type="text" class="form-control" id="nom" ngModel name="nom" #nom="ngModel" required pattern="[a-zA-Z]+">
+    <div *ngIf="nom.invalid && nom.touched && nom.errors?.required" class="alert alert-danger" role="alert">
+      Le champ nom est obligatoire !
+    </div>
+    <div *ngIf="nom.invalid && nom.touched && nom.errors?.pattern" class="alert alert-danger" role="alert">
+      La valeur du champ nom doit contenir des lettres uniquement !
+    </div>
   </div>
   <div class="mb-3">
     <label for="langue" class="form-label">Langue</label>
-    <input type="text" class="form-control" id="langue" ngModel name="langue">
+    <input type="text" class="form-control" id="langue" ngModel name="langue" required #langue="ngModel" pattern="[a-z]{2}">
+    <div *ngIf="langue.invalid && langue.touched && langue.errors?.required" class="alert alert-danger" role="alert">
+      Le champ langue est obligatoire !
+    </div>
+    <div *ngIf="langue.invalid && langue.touched && langue.errors?.pattern" class="alert alert-danger" role="alert">
+      La valeur du champ langue doit contenir de 2 lettres uniquement !
+    </div>
   </div>
   <div class="mb-3">
     <label for="drapeau" class="form-label">Drapeau</label>
-    <input type="text" class="form-control" id="drapeau" ngModel name="drapeau">
+    <input type="text" class="form-control" id="drapeau" ngModel name="drapeau" #drapeau="ngModel" required>
+    <div *ngIf="drapeau.invalid && drapeau.touched && drapeau.errors?.required" class="alert alert-danger" role="alert">
+      Le champ drapeau est obligatoire !
+    </div>
   </div>
   <div class="mb-3">
     <label for="capitale" class="form-label">Capitale</label>
     <input type="text" class="form-control" id="capitale" ngModel name="capitale">
   </div>
-  <button type="submit" class="btn btn-primary">Ajouter un pays</button>
+  <button type="submit"[disabled]="f.invalid" class="btn btn-primary">Ajouter un pays</button>
 </form>
