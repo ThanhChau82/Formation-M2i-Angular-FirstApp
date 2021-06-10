@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { TdFormComponent } from './td-form/td-form.component';
+import { ParentComponent } from './parent/parent.component';
+import { FilsComponent } from './fils/fils.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    TdFormComponent
+    TdFormComponent,
+    ParentComponent,
+    FilsComponent
   ],
   imports: [ // Importer les bibliothèques/modules externes
     BrowserModule,

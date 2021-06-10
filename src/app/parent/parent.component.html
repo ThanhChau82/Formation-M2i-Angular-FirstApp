@@ -1,2 +1,4 @@
-<p>{{message}}</p>
-<app-fils></app-fils>
+<p>Parent : <br/>
+  <input type="text" [(ngModel)]="message"/>
+</p>
+<app-fils [msg]="message"></app-fils>
