@@ -49,4 +49,9 @@ export class SecondComponent implements OnInit {
     this.changerAction("modify");
     this.paysActif = p;
   }
+
+  modifier(p : Pays) {
+    let indice = this.pays.findIndex(index => index.id == p.id);
+    this.pays[indice] = p;
+  }
 }

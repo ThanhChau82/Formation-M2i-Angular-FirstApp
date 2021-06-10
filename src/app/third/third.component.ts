@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Pays } from '../models/pays';
 
@@ -9,6 +9,7 @@ import { Pays } from '../models/pays';
 })
 export class ThirdComponent implements OnInit {
   @Input('paysActif') paysActif : Pays;
+  @Output() paysModifie = new EventEmitter<Pays>();
 
   constructor() {
     this.paysActif = <Pays>{};
@@ -18,6 +19,6 @@ export class ThirdComponent implements OnInit {
   }
 
   modifierPays(f : NgForm) {
-
+    this.paysModifie.emit(this.paysActif);
   }
 }
