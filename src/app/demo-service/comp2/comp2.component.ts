@@ -8,9 +8,11 @@ import { DemoService } from '../demo.service';
 })
 export class Comp2Component implements OnInit {
   listePays : string[];
+  p : string;
 
   constructor(private myService : DemoService) {
     this.listePays = [];
+    this.p = "";
   }
 
   ngOnInit(): void {
@@ -18,4 +20,7 @@ export class Comp2Component implements OnInit {
     this.listePays = this.myService.pays;
   }
 
+  ajouter() {
+    this.myService.ajouterPays(this.p);
+  }
 }

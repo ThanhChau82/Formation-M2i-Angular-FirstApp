@@ -14,4 +14,9 @@ export class DemoService {
   sayHello() {
     console.log("Hello !");
   }
+
+  ajouterPays(p : string) {
+    this.pays.push(p);
+    console.log(this.pays);
+  }
 }
