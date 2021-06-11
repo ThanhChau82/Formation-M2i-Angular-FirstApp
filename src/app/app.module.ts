@@ -10,6 +10,8 @@ import { ParentComponent } from './parent/parent.component';
 import { FilsComponent } from './fils/fils.component';
 import { ThirdComponent } from './third/third.component';
 import { FourComponent } from './four/four.component';
+import { Comp1Component } from './demo-service/comp1/comp1.component';
+import { Comp2Component } from './demo-service/comp2/comp2.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FourComponent } from './four/four.component';
     ParentComponent,
     FilsComponent,
     ThirdComponent,
-    FourComponent
+    FourComponent,
+    Comp1Component,
+    Comp2Component
   ],
   imports: [ // Importer les bibliothèques/modules externes
     BrowserModule,

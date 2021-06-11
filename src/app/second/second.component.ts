@@ -31,7 +31,7 @@ export class SecondComponent implements OnInit {
 
   activerPays(id: number) {
     this.paysActif = <Pays>this.pays.find(p => p.id == id);
-    this.action = "consulter";
+    this.changerAction("consulter");
   }
 
   ressetPays() {
