@@ -4,7 +4,8 @@ import { DemoService } from '../demo.service';
 @Component({
   selector: 'app-comp2',
   templateUrl: './comp2.component.html',
-  styleUrls: ['./comp2.component.css']
+  styleUrls: ['./comp2.component.css'],
+  providers: [DemoService]
 })
 export class Comp2Component implements OnInit {
   listePays : string[];

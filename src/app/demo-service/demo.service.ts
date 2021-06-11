@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
+@Injectable(
+  /*{
   providedIn: 'root' // ce service se trouve à la racine du projet, il sera utilisable dans tous les composant.
-})
+  }*/
+)
 export class DemoService {
   pays : string[];
 
